@@ -57,7 +57,7 @@ const formSubmit = (e) => {
             });
         })
         .catch((err) => {
-            setServerError("Uh oh! Something broke... don't worry. I'll fix it.");
+            setServerError("Uh oh! Something broke... don't worry, I'll fix it.");
         });
 };
 
@@ -124,15 +124,8 @@ console.log("formState", formState);
         name="password"
         value={formState.password}
         onChange={inputChange}
-        // useVendorStyles={false}
 />
-        {/* <input
-            id="password"
-            type="password"
-            name="password"
-            value={formState.password}
-            onChange={inputChange}
-        /> */}
+        
         {errors.password.length > 0 ? (
             <p className="error">{errors.password}</p>
         ) : null}
