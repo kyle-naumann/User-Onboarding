@@ -99,6 +99,7 @@ console.log("formState", formState);
             id="name"
             type="text"
             name="name"
+            data-cy="name"
             value={formState.name}
             onChange={inputChange}
         />
@@ -110,6 +111,7 @@ console.log("formState", formState);
             id="email"
             type="text"
             name="email"
+            data-cy="email"
             value={formState.email}
             onChange={inputChange}
         />
@@ -119,13 +121,13 @@ console.log("formState", formState);
     </label>
     <label htmlFor="password">
         Password
-        <PasswordMask
+        <input
         id="password"
         name="password"
+        data-cy="password"
         value={formState.password}
         onChange={inputChange}
-/>
-        
+        />
         {errors.password.length > 0 ? (
             <p className="error">{errors.password}</p>
         ) : null}
@@ -135,6 +137,7 @@ console.log("formState", formState);
             type="checkbox"
             id="terms"
             name="terms"
+            data-cy="terms"
             checked={formState.terms}
             onChange={inputChange}
         />
@@ -143,7 +146,7 @@ console.log("formState", formState);
             <p className="error">{errors.terms}</p>
             ) : null}
         </label>
-        <button type="submit" disabled={buttonIsDisabled}>
+        <button data-cy="submit" type="submit" disabled={buttonIsDisabled}>
         Submit
         </button>
         <pre>{JSON.stringify(post, null, 2)}</pre>
